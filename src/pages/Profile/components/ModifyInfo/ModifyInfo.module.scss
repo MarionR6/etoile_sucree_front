@@ -1,0 +1,122 @@
+@use"../../../../assets/styles/mixin" as mixin;
+
+.chosenCategory {
+    padding: var(--padding-block-article);
+    display: flex;
+    flex-direction: column;
+
+    .chosenCategoryTitle {
+        font-family: var(--font-family);
+        font-weight: 500;
+        font-size: 1.5rem;
+        align-self: center;
+        margin: 5% 0 3% 0;
+
+        @include mixin.smartphone {
+            font-size: 1rem;
+        }
+    }
+
+    .subContainerProfile {
+        display: flex;
+        justify-content: center;
+
+        .userInfoProfile {
+            width: 100%;
+
+            form {
+                display: flex;
+                flex-direction: column;
+
+                .oneInputCategory {
+                    display: flex;
+                    flex-direction: column;
+                    margin-block: 1%;
+
+                    label {
+                        font-size: 1rem;
+                    }
+
+                    input {
+                        background-color: var(--text-color-light);
+                        border: none;
+                        border-radius: .7rem;
+                        max-width: 80%;
+                        padding: .25% 2%;
+                        font-size: 1.2rem;
+                        font-family: var(--font-family);
+
+                        @include mixin.tablet {
+                            max-width: 100%;
+                        }
+
+                        @include mixin.smartphone {
+                            font-size: 1rem;
+                        }
+                    }
+                }
+
+
+            }
+
+            .flexInfo {
+                margin: 0 auto;
+                max-width: 300px;
+                min-width: fit-content;
+            }
+
+            .oneInfo {
+                margin-block: 5%;
+
+                .labelInfo {
+                    font-size: 1.2rem;
+
+                    @include mixin.smartphone {
+                        font-size: 1rem;
+                    }
+                }
+
+                .lockedInfo {
+                    background-color: var(--primary);
+                    display: inline-block;
+                    width: 100%;
+                    border-radius: .7rem;
+                    padding: .25% 2%;
+                    color: var(--text-color-dark);
+                    font-size: 1.2rem;
+
+                    @include mixin.smartphone {
+                        width: 100%;
+                        font-size: 1rem;
+                    }
+                }
+            }
+
+            .feedbackContainer {
+                margin-top: 5%;
+            }
+
+            .buttonsContainer {
+                margin-block: 5%;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+
+                .modifyInfoButton {
+                    padding: 1% 2%;
+                    font-size: 1rem;
+                    cursor: pointer;
+                }
+
+            }
+        }
+    }
+}
+
+.feedback {
+    color: red;
+}
+
+.feedbackGood {
+    color: green;
+}

@@ -1,0 +1,180 @@
+@use"../../assets/styles/mixin" as mixin;
+
+footer {
+    width: 100%;
+    background-color: var(--primary);
+
+    .footerContainer {
+        padding: 3% 0;
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-wrap: wrap;
+
+        .footerCategory {
+            min-width: 170px;
+            color: var(--text-color-dark);
+            font-size: 1.1rem;
+
+            @include mixin.laptop {
+                font-size: 1rem;
+            }
+
+            @include mixin.smartphone {
+                text-align: center;
+                margin-block: 1%;
+            }
+
+            .footerTitle {
+                font-family: var(--font-title);
+                color: var(--text-color-dark);
+
+                @include mixin.laptop {
+                    font-size: 1.8rem;
+                }
+
+                @include mixin.smartphone {
+                    font-size: 1.3rem;
+                }
+            }
+
+            .footerLines {
+                font-family: var(--font-family);
+                padding-top: 1.5%;
+
+                @include mixin.tablet {
+                    font-size: .9rem;
+                }
+            }
+
+            a {
+                color: var(--text-color-dark);
+                transition: .5s all;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+
+            .iconsContainer {
+                width: 60%;
+                padding-top: 3%;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                a {
+                    display: flex;
+                    align-items: center;
+
+                    i {
+                        padding-right: 5%;
+                        transition: .5s all;
+
+                        &:hover {
+                            transform: scale(1.2);
+                        }
+
+                        @include mixin.smartphone {
+                            font-size: 1.3rem;
+                        }
+                    }
+                }
+
+
+
+                @include mixin.smartphone {
+                    display: flex;
+                    justify-content: space-evenly;
+                    align-items: center;
+                    margin-top: 5%;
+                    border: .09rem solid var(--text-color-dark);
+                    border-radius: 1rem;
+                    padding: 3% 0;
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    .legal {
+        background-color: var(--secondary);
+        padding: 1rem 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .legalContent {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--text-color-light);
+            gap: .2rem;
+
+            @include mixin.smartphone {
+                flex-direction: column;
+            }
+
+            .legalName {
+                display: flex;
+                gap: .2rem;
+                align-items: center;
+
+                p {
+                    @include mixin.smartphone {
+                        font-size: .8rem;
+                    }
+                }
+
+                @include mixin.smartphone {
+                    margin-bottom: 2%;
+                }
+
+                #legalNameBars {
+                    @include mixin.smartphone {
+                        display: none;
+                    }
+                }
+            }
+
+            .legalLinks {
+                display: flex;
+                align-items: center;
+                gap: .2rem;
+
+                a {
+                    font-size: 1rem;
+                    color: var(--text-color-light);
+                    transition: .5s all;
+                    display: inline;
+                    white-space: nowrap;
+
+                    @include mixin.tablet {
+                        font-size: 1rem;
+                    }
+
+                    @include mixin.smartphone {
+                        font-size: .8rem;
+                    }
+
+                    &:hover {
+                        transform: scale(1.02);
+                    }
+                }
+
+                span {
+                    font-size: .9rem;
+                }
+
+            }
+        }
+    }
+}
+
+#socialTitle,
+#socialSubtitle {
+    @include mixin.smartphone {
+        display: none;
+    }
+}

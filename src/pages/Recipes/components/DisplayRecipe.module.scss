@@ -1,0 +1,237 @@
+@use "../../../assets/styles/mixin" as mixin;
+
+.displayRecipeContainer {
+    display: flex;
+    justify-content: center;
+
+    .txtContainer {
+        max-width: 30%;
+        padding: 3% 2%;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        min-width: fit-content;
+
+
+        @include mixin.small-laptop {
+            width: 50%;
+        }
+
+        @include mixin.tablet {
+            width: 70%;
+        }
+
+        @include mixin.smartphone {
+            width: 50%;
+            margin-block: 2%;
+        }
+
+        .heartContainer {
+            position: absolute;
+            right: 5%;
+            top: 5%;
+
+            button {
+                background: none;
+                border: none;
+
+                i {
+                    font-size: 1.5rem;
+                    color: var(--text-color-light);
+                    cursor: pointer;
+                    transition: .5s all;
+
+                    &:hover {
+                        animation: like-anim .7s linear;
+
+                        @keyframes like-anim {
+
+                            0% {
+                                transform: scale(1) rotate(0deg);
+                            }
+
+                            20% {
+                                transform: scale(1.05) rotate(0deg);
+                            }
+
+                            45% {
+                                transform: scale(1.2) rotate(10deg);
+                            }
+
+                            50% {
+                                transform: scale(1.2) rotate(-10deg);
+                            }
+
+                            80% {
+                                transform: scale(1.05) rotate(0deg);
+                            }
+
+                            100% {
+                                transform: scale(1) rotate(0deg);
+                            }
+                        }
+                    }
+
+                }
+            }
+        }
+
+        .darkHeart {
+            i {
+                color: var(--text-color-dark);
+            }
+        }
+
+
+        h3 {
+            align-self: center;
+            font-weight: 500;
+            font-size: 1.5rem;
+        }
+
+        .line {
+            margin-block: 5%;
+            width: 50%;
+            align-self: center;
+        }
+
+        .imgContainer {
+            margin: 0 auto;
+            width: 40%;
+            margin-top: 3%;
+            margin-bottom: 3%;
+
+            img {
+                width: 100%;
+                border: .2rem solid var(--primary);
+                aspect-ratio: 1;
+                object-fit: cover;
+            }
+        }
+
+        #brownBackgroundImgContainer {
+            img {
+                border: .2rem solid var(--secondary);
+            }
+        }
+
+        .currentRecipeInfo {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+
+            i {
+                font-size: 1.5rem;
+            }
+
+            .timeRecipe {
+                display: flex;
+                align-items: center;
+                width: 33%;
+                min-width: 267px;
+                gap: 5%;
+
+                p {
+                    font-size: 1rem;
+                }
+            }
+
+            .currentRecipeDifficulty {
+                margin-block: 5%;
+            }
+
+            .currentRecipeDifficulty,
+            .currentRecipePeople {
+                width: 25%;
+                min-width: 200px;
+                display: flex;
+                align-items: center;
+                gap: 5%;
+
+                p {
+                    font-size: 1rem;
+                    text-transform: capitalize;
+                }
+            }
+        }
+
+        .buttonContainer {
+            width: 100%;
+
+            a {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+
+                button {
+                    margin-top: 5%;
+                    cursor: pointer;
+                }
+            }
+        }
+
+
+
+
+    }
+
+    #brownBackgroundTxtContainer {
+        width: 100%;
+        padding: 5% 4%;
+        min-width: fit-content;
+
+        @include mixin.small-laptop {
+            width: 75%;
+        }
+
+        @include mixin.smartphone {
+            width: 90%;
+        }
+
+        .currentRecipeInfo {
+            padding: 0 5%;
+        }
+    }
+
+    #darkHeart {
+        i {
+            color: var(--text-color-dark);
+
+            &:hover {
+                animation: like-anim .7s linear;
+
+                @keyframes like-anim {
+
+                    0% {
+                        transform: scale(1) rotate(0deg);
+                    }
+
+                    20% {
+                        transform: scale(1.05) rotate(0deg);
+                    }
+
+                    45% {
+                        transform: scale(1.2) rotate(10deg);
+                    }
+
+                    50% {
+                        transform: scale(1.2) rotate(-10deg);
+                    }
+
+                    80% {
+                        transform: scale(1.05) rotate(0deg);
+                    }
+
+                    100% {
+                        transform: scale(1) rotate(0deg);
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+.liked {
+    color: red;
+}

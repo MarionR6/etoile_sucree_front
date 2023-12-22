@@ -1,0 +1,20 @@
+@use"../../../../assets/styles/mixin" as mixin;
+
+.carouselContainer {
+    width: 40%;
+    margin: 0 auto;
+    padding: 5% 0;
+
+    @include mixin.tablet {
+        width: 65%;
+    }
+
+    .oneImage {
+        width: 100%;
+        border: 0.2rem solid var(--secondary);
+
+        img {
+            width: 100%;
+        }
+    }
+}

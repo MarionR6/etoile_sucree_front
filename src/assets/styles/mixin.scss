@@ -1,0 +1,47 @@
+@mixin xs {
+    @media (max-width: 576px) {
+        @content;
+    }
+}
+
+@mixin smartphone {
+    @media (max-width: 481px) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (max-width: 768px) {
+        @content;
+    }
+}
+
+@mixin small-laptop {
+    @media (max-width: 1220px) {
+        @content;
+    }
+}
+
+@mixin laptop {
+    @media (max-width: 1399px) {
+        @content;
+    }
+}
+
+@mixin large-laptop {
+    @media (max-width: 1750px) {
+        @content;
+    }
+}
+
+@mixin xxl {
+    @media (min-width : 1921px) {
+        @content ;
+    }
+}
+
+@mixin recipeDetailCard {
+    @media (max-width: 625px) {
+        @content;
+    }
+}

@@ -1,0 +1,23 @@
+.searchContainer {
+    padding: 3% 1%;
+    margin-block: 2%;
+    display: flex;
+    justify-content: center;
+    gap: 5%;
+    border: .1rem solid var(--secondary);
+    border-radius: 2rem;
+
+    i {
+        color: var(--text-color-dark);
+    }
+
+    input {
+        background-color: var(--primary);
+        border: none;
+        font-size: 1rem;
+
+        &::placeholder {
+            color: var(--text-color-dark);
+        }
+    }
+}

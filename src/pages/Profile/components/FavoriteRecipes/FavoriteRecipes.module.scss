@@ -1,0 +1,32 @@
+@use"../../../../assets/styles/mixin" as mixin;
+
+.chosenCategory {
+    padding: var(--padding-block-article);
+    display: flex;
+    flex-direction: column;
+
+    .chosenCategoryTitle {
+        font-family: var(--font-family);
+        font-weight: 500;
+        font-size: 1.5rem;
+        align-self: center;
+        margin: 5% 0 3% 0;
+
+        @include mixin.tablet {
+            font-size: 1rem;
+        }
+    }
+
+    .recipesContainer {
+        width: 100%;
+        max-width: 1152px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-bottom: 5%;
+    }
+
+    .btn {
+        font-size: 1rem;
+    }
+}

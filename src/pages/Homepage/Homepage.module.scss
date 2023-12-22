@@ -1,0 +1,214 @@
+@use "../../assets/styles/mixin" as mixin;
+
+section {
+    padding-block: var(--padding-block-section);
+}
+
+.sectionBrown {
+    background-color: var(--secondary);
+}
+
+.storyContainer {
+    background-color: var(--secondary);
+    padding: var(--padding-block-article);
+
+    @include mixin.smartphone {
+        padding: 0 2% 2% 2%;
+    }
+
+
+    h1 {
+        color: var(--text-color-light);
+        padding: var(--padding-title);
+        text-align: right;
+
+        @include mixin.laptop {
+            margin-bottom: 3%;
+        }
+
+        @include mixin.tablet {
+            margin-bottom: 5%;
+        }
+    }
+
+    .txtImgContainer {
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+
+        @include mixin.tablet {
+            flex-wrap: wrap;
+        }
+
+        .imgStory {
+            width: 35%;
+
+            @include mixin.large-laptop {
+                width: 38%;
+            }
+
+            @include mixin.laptop {
+                width: 30%;
+            }
+
+            @include mixin.tablet {
+                width: 60%;
+            }
+
+            @include mixin.smartphone {
+                width: 80%;
+            }
+
+            img {
+                width: 100%;
+                border: 0.2rem solid var(--primary)
+            }
+        }
+
+        .lineStory {
+            width: 0.2rem;
+            height: 25rem;
+            background: linear-gradient(to top, #522525, #EAC4E0, #522525);
+
+            @include mixin.laptop {
+                height: 15rem;
+            }
+
+            @include mixin.tablet {
+                width: 30rem;
+                height: 0.1rem;
+                margin-block: 5%;
+                background: linear-gradient(to left, #522525, #EAC4E0, #522525);
+            }
+
+            @include mixin.smartphone {
+                width: 20rem;
+            }
+        }
+
+        .txtStory {
+            width: 35%;
+            display: flex;
+            align-items: center;
+            padding: 3% 2%;
+
+            @include mixin.large-laptop {
+                width: 38%;
+                font-size: 1rem;
+            }
+
+            @include mixin.laptop {
+                width: 55%;
+            }
+
+            @include mixin.tablet {
+                width: 80%;
+            }
+
+            @include mixin.smartphone {
+                width: 95%;
+                padding: 5% 4%;
+            }
+        }
+    }
+}
+
+.servicesContainer {
+    padding: var(--padding-block-article);
+
+    @include mixin.tablet {
+        padding-left: 15%;
+        padding-right: 15%;
+    }
+
+    @include mixin.smartphone {
+        padding: var(--padding-block-article)
+    }
+
+    h1 {
+        color: var(--text-color-dark);
+        padding: var(--padding-title);
+
+        @include mixin.tablet {
+            margin-bottom: 3%;
+        }
+    }
+
+    .allServices {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.forYouContainer {
+    display: flex;
+    flex-direction: column;
+    padding: var(--padding-block-article);
+
+    h1 {
+        color: var(--text-color-light);
+        padding: var(--padding-title);
+        text-align: right;
+
+        @include mixin.tablet {
+            margin-bottom: 3%;
+        }
+    }
+
+    .txtRecipes {
+        width: 55%;
+        padding: 3% 2%;
+        align-self: center;
+        margin-top: 2%;
+
+        @include mixin.large-laptop {
+            width: 70%;
+        }
+
+        @include mixin.laptop {
+            margin-top: 5%;
+        }
+
+        @include mixin.tablet {
+            width: 100%;
+        }
+
+        @include mixin.smartphone {
+            padding: 5% 4%;
+        }
+    }
+
+    .titleOnTheBill {
+        color: var(--text-color-light);
+        margin-block: 4%;
+        text-align: center;
+    }
+
+    .underline {
+        width: 20%;
+        margin-bottom: 5%;
+        align-self: center;
+
+        @include mixin.laptop {
+            height: .15rem;
+            width: 22%;
+        }
+    }
+
+    .recipesContainer {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+
+    .linkHomepage {
+        padding: 1% 2%;
+        margin-top: 5%;
+
+        @include mixin.laptop {
+            margin-top: 6%;
+        }
+    }
+}

@@ -1,0 +1,171 @@
+@use"../../assets/styles/mixin" as mixin;
+
+.cardPink {
+    border-radius: var(--border-radius);
+    background-color: var(--primary);
+    color: var(--text-color-dark);
+}
+
+.cardBrown {
+    border-radius: var(--border-radius);
+    background-color: var(--secondary);
+    color: var(--text-color-light);
+}
+
+.line-light {
+    height: 0.12rem;
+    background: linear-gradient(to left, #EAC4E0, #522525, #EAC4E0);
+}
+
+.line-dark {
+    height: 0.12rem;
+    background: linear-gradient(to left, #522525, #EAC4E0, #522525);
+}
+
+.line-light-vertical {
+    width: 0.12rem;
+    background: linear-gradient(to bottom, #EAC4E0 #522525, #EAC4E0);
+    transform: rotate(90deg);
+}
+
+.line-dark-vertical {
+    width: 0.12rem;
+    background: linear-gradient(to bottom, #522525, #EAC4E0, #522525);
+}
+
+.btn {
+    color: var(--text-color-light);
+    border-radius: 2rem;
+    border: 0.1rem solid var(--text-color-light);
+    margin: 0 auto;
+    padding: 2% 4%;
+    font-family: var(--font-family);
+    font-size: 1.2rem;
+    transition: .5s all;
+    background-color: var(--secondary);
+    cursor: pointer;
+
+    a {
+        color: var(--text-color-light);
+        transition: .5s all;
+
+        &:hover {
+            color: var(--text-color-dark);
+        }
+    }
+
+    &:hover {
+        background-color: var(--primary);
+        color: var(--text-color-dark);
+    }
+
+    @include mixin.tablet {
+        &:hover {
+            background-color: var(--secondary);
+            color: var(--text-color-light);
+        }
+
+    }
+}
+
+.btn-secondary {
+    color: var(--text-color-dark);
+    border: 0.1rem solid var(--text-color-dark);
+    transition: .5s all;
+    background-color: var(--primary);
+
+    &:hover {
+        background-color: var(--secondary);
+        color: var(--text-color-light);
+    }
+
+    @include mixin.tablet {
+        &:hover {
+            background-color: var(--primary);
+            color: var(--text-color-dark);
+        }
+    }
+}
+
+.active {
+    position: relative;
+
+    // border-bottom: 1px solid var(--secondary);
+    &::after {
+        content: "";
+        width: 50px;
+        height: 4px;
+        background-color: var(--secondary);
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
+}
+
+nav {
+    ul {
+        a {
+            position: relative;
+
+            &::after {
+                content: "";
+                width: 0px;
+                height: 4px;
+                background-color: var(--secondary);
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                transition: width 600ms cubic-bezier(0.39, 0.5, 0.22, 2.5);
+            }
+
+            &:hover::after {
+                width: 50px;
+            }
+        }
+    }
+}
+
+.annexePages {
+    min-width: 360px;
+    width: 60%;
+    margin: 0 auto;
+    margin-block: 5%;
+
+    article {
+        padding: 0 5%;
+
+        h1 {
+            font-size: 2.5rem;
+
+            @include mixin.tablet {
+                font-size: 2rem;
+            }
+
+            @include mixin.smartphone {
+                font-size: 1.5rem;
+            }
+        }
+
+        p {
+            margin-block: 2%;
+
+            a {
+                display: inline-block;
+                color: var(--text-color-light);
+                text-decoration: underline;
+            }
+        }
+
+        ul {
+            li {
+                list-style-type: disc;
+            }
+        }
+
+        button {
+            padding: 1% 2%;
+            font-size: 1rem;
+            margin-top: 2%;
+        }
+    }
+}

@@ -1,0 +1,137 @@
+@use"../../assets/styles/mixin" as mixin;
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0px 1000px #EAC4E0 inset;
+}
+
+.adminNav {
+    padding: 3% 2%;
+
+    ul {
+        display: flex;
+        width: 100%;
+        justify-content: space-around;
+
+        @include mixin.smartphone {
+            flex-direction: column;
+        }
+
+        li {
+            @include mixin.smartphone {
+                margin-block: 1%;
+            }
+
+            a {
+                color: var(--text-color-dark);
+                font-family: var(--font-family);
+                font-size: 1.5rem;
+                display: inline;
+
+                @include mixin.tablet {
+                    font-size: 1.1rem;
+                }
+
+                @include mixin.smartphone {
+                    font-size: .9rem;
+                }
+            }
+        }
+    }
+}
+
+.formContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 3%;
+
+    .form {
+        display: flex;
+        flex-direction: column;
+        padding: 2%;
+        width: 40%;
+
+        @include mixin.large-laptop {
+            width: 45%;
+        }
+
+        @include mixin.laptop {
+            width: 55%;
+        }
+
+        @include mixin.tablet {
+            width: 80%;
+        }
+
+        @include mixin.smartphone {
+            width: 90%;
+        }
+
+
+        h2 {
+            text-align: center;
+            color: var(--text-color-light);
+            margin-bottom: 5%;
+        }
+
+        .oneFormElement {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 2%;
+            padding: 0 5%;
+
+            label {
+                font-family: var(--font-family);
+                font-size: 1.1rem;
+                margin-bottom: 1%;
+
+                @include mixin.smartphone {
+                    font-size: .9rem;
+                }
+            }
+
+            input,
+            textarea,
+            select {
+                background-color: var(--primary);
+                border-radius: 1rem;
+                border: .1rem solid var(--secondary);
+                padding: 1% 2%;
+                width: 100%;
+                margin-bottom: 2%;
+                color: var(--text-color-dark);
+                font-size: 1rem;
+                font-family: var(--font-family);
+
+                @include mixin.smartphone {
+                    font-size: .9rem;
+                }
+
+                &::placeholder {
+                    color: var(--text-color-dark);
+                    font-size: .8rem;
+                    opacity: .8;
+                    font-style: italic;
+
+                    @include mixin.smartphone {
+                        font-size: .9rem;
+                    }
+                }
+            }
+        }
+    }
+
+    .buttonContainer {
+        margin-top: 3%;
+        display: flex;
+        justify-content: center;
+
+        button {
+            cursor: pointer;
+        }
+    }
+
+}

@@ -1,0 +1,118 @@
+@use "../../assets/styles/mixin" as mixin;
+
+
+section {
+    padding-block: var(--padding-block-section);
+    font-family: var(--font-family);
+}
+
+.sectionBrown {
+    background-color: var(--secondary);
+}
+
+.currentRecipeContainer {
+    padding: var(--padding-block-article);
+
+    @include mixin.small-laptop {
+        padding: 0;
+    }
+
+    .currentRecipeTitle {
+        color: var(--text-color-dark);
+        margin-bottom: 2%;
+    }
+
+    .lightTitle {
+        color: var(--text-color-light);
+        text-align: right;
+        margin-bottom: 2%;
+    }
+
+    .flexContainer {
+        display: flex;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+
+        .searchContainer {
+            background-color: var(--primary);
+            min-width: fit-content;
+            width: 25%;
+            padding: 2% 2%;
+            max-height: 600px;
+            overflow-y: auto;
+            border-radius: 5%;
+
+            &::-webkit-scrollbar {
+                width: .8rem;
+            }
+
+            &::-webkit-scrollbar-thumb {
+                background-color: #39191992;
+                border-radius: 1rem;
+            }
+
+            &::-webkit-scrollbar-track {
+                background-color: var(--primary);
+            }
+
+
+
+            @include mixin.small-laptop {
+                width: 30%;
+            }
+
+            @include mixin.tablet {
+                max-height: 340px;
+                width: 40%;
+            }
+
+            @include mixin.smartphone {
+                width: 70%;
+                padding: 4%;
+                max-height: 340px;
+                margin-block: 5%;
+                justify-self: flex-start;
+            }
+
+            .recipeNamesContainer {
+
+                ul {
+                    li {
+                        button {
+                            background: none;
+                            border: none;
+                            font-size: 1rem;
+                            color: var(--text-color-dark);
+                            font-family: var(--font-family);
+                            margin-block: 1%;
+                            cursor: pointer;
+                            transition: .5s all;
+
+                            &:hover {
+                                transform: scale(1.05);
+                            }
+                        }
+                    }
+                }
+            }
+
+        }
+
+        .chosenRecipeContainer {
+            width: 35%;
+
+            @include mixin.laptop {
+                width: 50%;
+            }
+
+            @include mixin.tablet {
+                width: 55%;
+            }
+
+            @include mixin.smartphone {
+                width: 70%;
+            }
+        }
+
+    }
+}
