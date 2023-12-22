@@ -3,7 +3,10 @@ const API_USERS = "https://etoile-sucree-back.vercel.app/api/users";
 // FUNCTION TO GET THE ALREADY CONNECTED USER THANKS TO THE COOKIE "TOKEN" STORED IN THE USER'S NAVIGATOR
 
 export async function getConnectedUser() {
-    const response = await fetch(`${API_USERS}/userConnected`);
+    const response = await fetch(`${API_USERS}/userConnected`, {
+        credentials: "include",
+    });
+
     return response.json();
 }
 
@@ -15,7 +18,8 @@ export async function signin(values) {
         headers: {
             "Content-Type": "application/json"
         },
-        body: JSON.stringify(values)
+        body: JSON.stringify(values),
+        credentials: "include",
     });
     const backResponse = await response.json();
     if (response.ok) {
@@ -72,7 +76,8 @@ export async function modifyUserInfo(values) {
 
 export async function logout() {
     const response = await fetch(`${API_USERS}/logout`, {
-        method: "DELETE"
+        method: "DELETE",
+        credentials: "include",
     }
     );
 }
