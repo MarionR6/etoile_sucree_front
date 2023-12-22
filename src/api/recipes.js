@@ -1,9 +1,9 @@
-const API_RECIPES = "/api/recipes";
+const API_RECIPES = "https://etoile-sucree-back.vercel.app/api/recipes";
 
 // FRONT FUNCTION TO CALL BACK REQUEST TO LIKE OR DISLIKE A RECIPE
 
 export async function toggleLikeRecipe(idRecipe, idUser) {
-    const response = await fetch(`http://localhost:8000${API_RECIPES}/likeRecipe/${idUser}`, {
+    const response = await fetch(`https://etoile-sucree-back.vercel.app${API_RECIPES}/likeRecipe/${idUser}`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -19,7 +19,7 @@ export async function toggleLikeRecipe(idRecipe, idUser) {
 // FUNCTION FOR THE ADMIN TO DELETE A RECIPE
 
 export async function deleteRecipe(idRecipe) {
-    const response = await fetch(`http://localhost:8000${API_RECIPES}/deleteRecipe`, {
+    const response = await fetch(`https://etoile-sucree-back.vercel.app${API_RECIPES}/deleteRecipe`, {
         method: "DELETE",
         headers: {
             "Content-Type": "application/json"

@@ -19,7 +19,7 @@ export default function ModifyRecipe() {
     useEffect(() => {
         async function getRecipeDetails() {
             try {
-                const response = await fetch(`http://localhost:8000/api/recipes/getRecipeDetails/${id}`);
+                const response = await fetch(`https://etoile-sucree-back.vercel.app/api/recipes/getRecipeDetails/${id}`);
                 if (response.ok) {
                     const detailsFromBack = await response.json();
                     setDetails(detailsFromBack[0]);
@@ -43,7 +43,7 @@ export default function ModifyRecipe() {
 
 
     async function submit(sentValues) {
-        const response = await fetch(`http://localhost:8000/api/recipes/modifyRecipe/${id}`, {
+        const response = await fetch(`https://etoile-sucree-back.vercel.app/api/recipes/modifyRecipe/${id}`, {
             method: "PATCH",
             headers: {
                 "Content-Type": "application/json"
@@ -80,7 +80,7 @@ export default function ModifyRecipe() {
             formData.append("img", imgRef.current.files[0]);
             formData.append("choice", sentImage.choice);
         }
-        const response = await fetch(`http://localhost:8000/api/recipes/modifyRecipe/${id}`, {
+        const response = await fetch(`https://etoile-sucree-back.vercel.app/api/recipes/modifyRecipe/${id}`, {
             method: "PATCH",
             body: formData,
         });

@@ -44,7 +44,7 @@ export default function ForgottenPassword() {
         setFeedback("");
 
         try {
-            const response = await fetch(`http://localhost:8000/api/users/resetForgottenPassword/${values.email}`);
+            const response = await fetch(`https://etoile-sucree-back.vercel.app/api/users/resetForgottenPassword/${values.email}`);
             if (response.ok) {
                 const resetCodeFromBack = await response.json();
                 setResetPasswordCode(resetCodeFromBack); // SETS THE RESET CODE TO THE RANDOMLY GENERATED CODE SENT BY EMAIL TO THE USER

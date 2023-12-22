@@ -16,7 +16,7 @@ export default function Recipes() {
     useEffect(() => {
         async function getRecipes() {
             try {
-                const response = await fetch(`http://localhost:8000/api/recipes/getRecipes`);
+                const response = await fetch(`https://etoile-sucree-back.vercel.app/api/recipes/getRecipes`);
                 if (response.ok) {
                     const recipesFromBack = await response.json();
                     setLatestRecipe(recipesFromBack.slice(0, 1));

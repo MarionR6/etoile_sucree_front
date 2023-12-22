@@ -23,7 +23,7 @@ export default function RecipesDetails() {
     useEffect(() => {
         async function getRecipeDetails() {
             try {
-                const response = await fetch(`http://localhost:8000/api/recipes/getRecipeDetails/${id}`);
+                const response = await fetch(`https://etoile-sucree-back.vercel.app/api/recipes/getRecipeDetails/${id}`);
                 if (response.ok) {
                     const detailsFromBack = await response.json();
                     setDetails(detailsFromBack[0]); // STORES THE FETCHED DATA
@@ -41,7 +41,7 @@ export default function RecipesDetails() {
                     setIsLiked(false);
                     return;
                 }
-                const response = await fetch(`http://localhost:8000/api/recipes/getFaves/${idUser}`);
+                const response = await fetch(`https://etoile-sucree-back.vercel.app/api/recipes/getFaves/${idUser}`);
                 if (response.ok) {
                     const favesFromBack = await response.json();
                     const isRecipeLiked = favesFromBack.some((fave) => fave.idRecipe === details?.idRecipe);//Searching through the array "details", testing each element of the array to find whether the details is part of the array, if it is, it sets the liked state to true, if it is not, it is set to false. I am using this in order to render the heart in the recipe display component conditionally
@@ -78,7 +78,7 @@ export default function RecipesDetails() {
                     <div className={`line-dark ${styles.line}`}></div>
                     <div className={styles.recipeContent}>
                         <div className={styles.imgContainer}>
-                            <img src={`http://localhost:8000/${details?.img}`} alt="" />
+                            <img src={`https://etoile-sucree-back.vercel.app/${details?.img}`} alt="" />
                         </div>
                         <div className={styles.txtContainer}>
                             <div className={styles.infoContainer}>

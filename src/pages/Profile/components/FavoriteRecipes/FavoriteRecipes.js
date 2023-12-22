@@ -15,7 +15,7 @@ export default function FavoriteRecipes() {
     useEffect(() => {
         async function getFavoriteRecipes() {
             try {
-                const response = await fetch(`http://localhost:8000/api/recipes/getFaves/${userId}`);
+                const response = await fetch(`https://etoile-sucree-back.vercel.app/api/recipes/getFaves/${userId}`);
 
                 if (response.ok) {
                     const favesFromBack = await response.json();
@@ -38,7 +38,7 @@ export default function FavoriteRecipes() {
             <div className={styles.recipesContainer}>
                 {usersFaves.length === 0 && <p>Aucune recette en favoris</p>}
                 {usersFaves.map((r, index) => (
-                    <SmallCards key={index} image={`http://localhost:8000/${r.img}`} recipeName={r.recipeName} idRecipe={r.idRecipe} handleDeleteFront={handleDeleteFront} />
+                    <SmallCards key={index} image={`https://etoile-sucree-back.vercel.app/${r.img}`} recipeName={r.recipeName} idRecipe={r.idRecipe} handleDeleteFront={handleDeleteFront} />
                 ))}
             </div>
             <Link to="/recettes" className={`btn ${styles.btn}`}>Voir toutes les recettes</Link>

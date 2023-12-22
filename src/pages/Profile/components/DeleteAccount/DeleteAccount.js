@@ -23,7 +23,7 @@ export default function DeleteAccount() {
 
     async function handleDeleteUser(password) {
         try {
-            const response = await fetch(`http://localhost:8000/api/users/deleteUser/${userId}`, {
+            const response = await fetch(`https://etoile-sucree-back.vercel.app/api/users/deleteUser/${userId}`, {
                 method: "DELETE",
                 headers: {
                     "Content-Type": "application/json"

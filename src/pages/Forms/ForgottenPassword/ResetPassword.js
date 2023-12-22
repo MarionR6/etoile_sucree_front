@@ -73,7 +73,7 @@ export default function ResetPassword() {
 
     async function submit(values) {
         try {
-            const response = await fetch(`http://localhost:8000/api/users/resetPassword/${email}`, {
+            const response = await fetch(`https://etoile-sucree-back.vercel.app/api/users/resetPassword/${email}`, {
                 method: "PATCH",
                 headers: {
                     "Content-Type": "application/json"

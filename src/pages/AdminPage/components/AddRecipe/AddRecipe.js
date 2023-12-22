@@ -91,7 +91,7 @@ export default function AddRecipe() {
             }
             formData.append("img", imgRef.current.files[0]);
         }
-        const response = await fetch("http://localhost:8000/api/recipes/addRecipe", {
+        const response = await fetch("https://etoile-sucree-back.vercel.app/api/recipes/addRecipe", {
             method: "POST",
             body: formData,
         });

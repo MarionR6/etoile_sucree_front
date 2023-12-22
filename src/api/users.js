@@ -1,4 +1,4 @@
-const API_USERS = "/api/users";
+const API_USERS = "https://etoile-sucree-back.vercel.app/api/users";
 
 // FUNCTION TO GET THE ALREADY CONNECTED USER THANKS TO THE COOKIE "TOKEN" STORED IN THE USER'S NAVIGATOR
 

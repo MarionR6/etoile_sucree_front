@@ -21,7 +21,7 @@ export default function Homepage() {
     useEffect(() => {
         async function getRecipesForHomepage() { // FETCH DATA FROM RECIPES TABLE IN DATABASE
             try {
-                const response = await fetch(`http://localhost:8000/api/recipes/getRecipesHomepage`);
+                const response = await fetch(`https://etoile-sucree-back.vercel.app/api/recipes/getRecipesHomepage`);
                 if (response.ok) {
                     const recipesFromBack = await response.json();
                     setHomeRecipes(recipesFromBack);
@@ -99,7 +99,7 @@ export default function Homepage() {
                         {homeRecipes.map((r, index) => (
                             <SquareCards
                                 key={index}
-                                image={`http://localhost:8000/${r.img}`}
+                                image={`https://etoile-sucree-back.vercel.app/${r.img}`}
                                 recipeName={r.recipeName}
                                 id={r.idRecipe} />
                         ))}

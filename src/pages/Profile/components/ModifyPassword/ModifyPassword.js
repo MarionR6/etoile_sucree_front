@@ -52,7 +52,7 @@ export default function ModifyPassword() {
     async function submitNewPassword(values) {
         try {
             setFeedback("");
-            const response = await fetch(`http://localhost:8000/api/users/modifyPassword/${userId}`, {
+            const response = await fetch(`https://etoile-sucree-back.vercel.app/api/users/modifyPassword/${userId}`, {
                 method: "PATCH",
                 headers: {
                     "Content-Type": "application/json"

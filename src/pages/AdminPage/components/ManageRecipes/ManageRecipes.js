@@ -13,7 +13,7 @@ export default function ManageRecipes() {
     useEffect(() => {
         async function getRecipes() {
             try {
-                const response = await fetch(`http://localhost:8000/api/recipes/getRecipes`);
+                const response = await fetch(`https://etoile-sucree-back.vercel.app/api/recipes/getRecipes`);
                 if (response.ok) {
                     const recipesFromBack = await response.json();
                     const orderedRecipes = recipesFromBack.sort(function (a, b) {
@@ -68,7 +68,7 @@ export default function ManageRecipes() {
                     {allRecipes.map((r, index) => (
                         <tr key={index}>
                             <td>{r.recipeName}</td>
-                            <td className={styles.imgContainer}><img src={`http://localhost:8000/${r.img}`} /></td>
+                            <td className={styles.imgContainer}><img src={`https://etoile-sucree-back.vercel.app/${r.img}`} /></td>
                             <td className={styles.buttonContainer}>
                                 <button
                                     type='button'
